@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/24/Java中print小记/">Java中print小记</a>
+      <a class="article-title" href="/2019/08/24/Java中print小记/">Java中printf小记</a>
     </h1>
   
 
@@ -84,12 +84,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h6><p><a href="https://blog.csdn.net/zlfprogram/article/details/72624881" target="_blank" rel="noopener">https://blog.csdn.net/zlfprogram/article/details/72624881</a></p>
+        <p>在Java中，<font color="red"><strong><em>print</em></strong></font>就是一般的标准输出，但是每个print语句之间不会换行<font color="grey">(<strong><em>可用转义符\n做出换行效果</em></strong>)</font>这时的效果就和单独使用<font color="red"><strong><em>println</em></strong></font>一样。<br>对于像我这样的Java初学者<font color="red"><strong><em>printf</em></strong></font>就略显陌生了，下面就是对printf的简单介绍。</p>
+<h1 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h1><p>printf的作用是进行格式输出，如果你学习过C语言，相信你应该会很熟悉<br>在使用Java时常常会出现这种情况  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">15</span>;</span><br><span class="line">System.out.print(<span class="string">"num is："</span> + num);</span><br></pre></td></tr></table></figure>
+
+
+<p>若果还有其他的变量要插入到字符串中，就会添加更多+号，使编写很繁琐  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String name = ZhangSan;</span><br><span class="line"><span class="keyword">int</span> id = <span class="number">001</span>;</span><br><span class="line">String sex = 男;</span><br><span class="line"></span><br><span class="line">System.out.print(<span class="string">"name is："</span> + name + <span class="string">"id is："</span> + id + <span class="string">"sex is："</span> + sex);</span><br></pre></td></tr></table></figure>
+
+<p>使用printf就可以很好的避免这种问题</p>
+<pre><code class="java">String name = LiSi;
+<span class="keyword">int</span> id = <span class="number">002</span>;
+String sex = 女;
+
+System.out.printf(<span class="string">"name is：%s id is：%s sex is：%s"</span>,name,id.sex);</code></pre>
+<p>参照Java API的定义如下：<br>‘d’ 整数结果被格式化为十进制整数<br>‘o’ 整数结果被格式化为八进制整数<br>‘x’, ‘X’ 整数结果被格式化为十六进制整数<br>‘e’, ‘E’ 浮点结果被格式化为用计算机科学记数法表示的十进制数<br>‘f’ 浮点结果被格式化为十进制数<br>‘g’, ‘G’ 浮点根据精度和舍入运算后的值，使用计算机科学记数形式或十进制格式对结果进行格式化<br>‘a’, ‘A’ 浮点结果被格式化为带有效位数和指数的十六进制浮点数<br>‘n’ 换行</p>
+<h6 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h6><p><a href="https://baike.baidu.com/item/printf%28%29/402521" target="_blank" rel="noopener">https://baike.baidu.com/item/printf%28%29/402521</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/Java中print小记/" data-id="cjzpanbnr0000s34r3ycpyvlz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/Java中print小记/" data-id="cjzv6tra30000nj4r6p1itzhb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/Markdown/" data-id="cjzpanbny0001s34r14q1bbtl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/Markdown/" data-id="cjzv6trab0001nj4rlws4xhfe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/My-First-Blog/" data-id="cjzpanbo00002s34ruqnqvxsj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/My-First-Blog/" data-id="cjzv6trae0002nj4r2m82f6ph" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/hello-world/" data-id="cjzpanbo20003s34rxinebz5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/hello-world/" data-id="cjzv6traf0003nj4r9d5smx4f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +290,7 @@
       <ul>
         
           <li>
-            <a href="/2019/08/24/Java中print小记/">Java中print小记</a>
+            <a href="/2019/08/24/Java中print小记/">Java中printf小记</a>
           </li>
         
           <li>
