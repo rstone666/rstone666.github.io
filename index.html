@@ -88,19 +88,68 @@
 <h1 id="１．普通字符串的匹配"><a href="#１．普通字符串的匹配" class="headerlink" title="１．普通字符串的匹配"></a>１．普通字符串的匹配</h1><p>字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与<strong>自身相同的一个字符</strong>。　</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'abc'</span>,<span class="string">'ababcd'</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(2,5), match=&apos;abc&apos;&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(2,5), match=&apos;abc&apos;&gt;</span><br></pre></td></tr></table></figure>
 
-<h6 id="必须和表达式完全一样才能被匹配"><a href="#必须和表达式完全一样才能被匹配" class="headerlink" title="必须和表达式完全一样才能被匹配"></a>必须和表达式完全一样才能被匹配</h6><p>—　</p>
-<h1 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h1><p>正则表达式中使用了很多元字符，用来表示一些特殊的含义或功能。<br>|表达式|匹配|<br>|——|:—<br>| .    |小数点可以匹配除了换行符\n以外的任意一个字符<br>| ｜   |逻辑或操作符<br>| []   |匹配字符集中的一个字符<br>| [^]  |字符集求反，也就是上面的反操作。尖号必须在括号的最前面<br>| \    |对紧跟其后的一个字符进行转义<br>| ()   |对表达式进行分组，将圆括号内的内容当做一个整体，并获得匹配的值</p>
+<h6 id="必须和表达式完全一样才能被匹配"><a href="#必须和表达式完全一样才能被匹配" class="headerlink" title="必须和表达式完全一样才能被匹配"></a>必须和表达式完全一样才能被匹配</h6><hr>
+<h1 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h1><p>正则表达式中使用了很多元字符，用来表示一些特殊的含义或功能。 </p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th align="center">匹配</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td align="center">小数点可以匹配除了换行符\n以外的任意一个字符</td>
+</tr>
+<tr>
+<td>｜</td>
+<td align="center">逻辑或操作符</td>
+</tr>
+<tr>
+<td>[]</td>
+<td align="center">匹配字符集中的一个字符</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td align="center">字符集求反，也就是上面的反操作。尖号必须在括号的最前面</td>
+</tr>
+<tr>
+<td>\</td>
+<td align="center">对紧跟其后的一个字符进行转义</td>
+</tr>
+<tr>
+<td>()</td>
+<td align="center">对表达式进行分组，将圆括号内的内容当做一个整体，并获得匹配的值</td>
+</tr>
+</tbody></table>
+<h2 id="的使用"><a href="#的使用" class="headerlink" title=".的使用"></a>.的使用</h2><p>小数点可以匹配除了换行符\n以外的任意一个字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'a.c'</span>,<span class="string">'acabbca9cjkjiwa'</span>)</span><br></pre></td></tr></table></figure>
 
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(6,9), match=&apos;a9c&apos;&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="因为‘-’表示除换行符以外的一个字符，所以ac、abbc都未被匹配到，而匹配到了a9c。"><a href="#因为‘-’表示除换行符以外的一个字符，所以ac、abbc都未被匹配到，而匹配到了a9c。" class="headerlink" title="因为‘.’表示除换行符以外的一个字符，所以ac、abbc都未被匹配到，而匹配到了a9c。"></a>因为‘.’表示除换行符以外的一个字符，所以ac、abbc都未被匹配到，而匹配到了a9c。</h6><h2 id="的使用-1"><a href="#的使用-1" class="headerlink" title="|的使用"></a>|的使用</h2><p>｜是逻辑或的操作符。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'a|bc'</span>,<span class="string">'bcajdiwpsk'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(0,2), match=&apos;bc&apos;&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="此句表示匹配a或者bc，在此处匹配到bc，匹配终止。"><a href="#此句表示匹配a或者bc，在此处匹配到bc，匹配终止。" class="headerlink" title="此句表示匹配a或者bc，在此处匹配到bc，匹配终止。"></a>此句表示匹配a或者bc，在此处匹配到bc，匹配终止。</h6><h2 id="的使用-2"><a href="#的使用-2" class="headerlink" title="()的使用"></a>()的使用</h2><p>()对表达式进行分组，类似与数学运算符里的()。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'(a|b)c'</span>,<span class="string">'abacabcde'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(2,4), match=&apos;ac&apos;&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="对a-b进行了单独分组，在’-a-b-c’中表示要匹配ac或者bc。"><a href="#对a-b进行了单独分组，在’-a-b-c’中表示要匹配ac或者bc。" class="headerlink" title="()对a|b进行了单独分组，在’(a|b)c’中表示要匹配ac或者bc。"></a>()对a|b进行了单独分组，在’(a|b)c’中表示要匹配ac或者bc。</h6>
       
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2019/08/31/正则表达式/" data-id="ck0kmpl3s00006x4ra8unrdt2" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式小记/">正则表达式小记</a></li></ul>
-
     </footer>
   </div>
   
@@ -153,6 +202,8 @@ System.out.printf(<span class="string">"name is：%s id is：%s sex is：%s"</sp
       <a data-url="http://yoursite.com/2019/08/24/Java中print小记/" data-id="ck0kmpl3y00016x4ral98n0hx" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
     </footer>
   </div>
   
@@ -313,7 +364,7 @@ System.out.printf(<span class="string">"name is：%s id is：%s sex is：%s"</sp
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式小记/">正则表达式小记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li></ul>
     </div>
   </div>
 
@@ -323,7 +374,7 @@ System.out.printf(<span class="string">"name is：%s id is：%s sex is：%s"</sp
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/正则表达式小记/" style="font-size: 10px;">正则表达式小记</a>
+      <a href="/tags/Java/" style="font-size: 10px;">Java</a>
     </div>
   </div>
 
