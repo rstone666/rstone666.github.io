@@ -7,18 +7,18 @@
   
   <title>正则表达式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;abcd&apos;)  运行结果： 1&amp;lt;re.Mat">
+  <meta name="description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;ababcd&apos;)  运行结果：1&amp;lt;re.Ma">
 <meta name="keywords" content="正则表达式小记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://yoursite.com/2019/08/31/正则表达式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;abcd&apos;)  运行结果： 1&amp;lt;re.Mat">
+<meta property="og:description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;ababcd&apos;)  运行结果：1&amp;lt;re.Ma">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-13T16:13:53.313Z">
+<meta property="og:updated_time" content="2019-09-15T08:31:32.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;abcd&apos;)  运行结果： 1&amp;lt;re.Mat">
+<meta name="twitter:description" content="正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。在这里我用Python语言来演示。  １．普通字符串的匹配字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与自身相同的一个字符。　 12import rere.search(&apos;abc&apos;,&apos;ababcd&apos;)  运行结果：1&amp;lt;re.Ma">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -89,16 +89,17 @@
       
         <p>正则表达式的功能十分强大，绝大多数的字符串都能通过它来进行表示，而且绝大多数语言都支持值得我们去学习。<em>在这里我用Python语言来演示</em>。 </p>
 <h1 id="１．普通字符串的匹配"><a href="#１．普通字符串的匹配" class="headerlink" title="１．普通字符串的匹配"></a>１．普通字符串的匹配</h1><p>字母、数字、汉子、下划线、以及没有特殊定义的符号，都是“普通字符”。正则表达式中的普通字符，在匹配时，只匹配与<strong>自身相同的一个字符</strong>。　</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'abc'</span>,<span class="string">'abcd'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.search(<span class="string">'abc'</span>,<span class="string">'ababcd'</span>)</span><br></pre></td></tr></table></figure>
 
-<p>运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(0,3), match=&apos;abc&apos;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span=(2,5), match=&apos;abc&apos;&gt;</span><br></pre></td></tr></table></figure>
 
+<h6 id="必须和表达式完全一样才能被匹配"><a href="#必须和表达式完全一样才能被匹配" class="headerlink" title="必须和表达式完全一样才能被匹配"></a>必须和表达式完全一样才能被匹配</h6><p>—　</p>
+<h1 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h1><p>正则表达式中使用了很多元字符，用来表示一些特殊的含义或功能。<br>|表达式|匹配|<br>|——|:—<br>| .    |小数点可以匹配除了换行符\n以外的任意一个字符<br>| ｜   |逻辑或操作符<br>| []   |匹配字符集中的一个字符<br>| [^]  |字符集求反，也就是上面的反操作。尖号必须在括号的最前面<br>| \    |对紧跟其后的一个字符进行转义<br>| ()   |对表达式进行分组，将圆括号内的内容当做一个整体，并获得匹配的值</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/正则表达式/" data-id="ck0ibl3ly00031z4r7zrhcds4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/正则表达式/" data-id="ck0kmpl3s00006x4ra8unrdt2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式小记/">正则表达式小记</a></li></ul>
